@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import scrin1 from "../assets/projects/scrin1.png";
+import scrin2 from "../assets/projects/scrin2.png";
 type CardType = "Projet" | "Expérience" | "Compétition";
 
 type Screenshot = {
-  src: string; // chemin dans /src/assets/projects/...
+  src: string;
   alt: string;
 };
 
@@ -14,12 +16,11 @@ type Card = {
   stack: string[];
   highlights: string[];
   learned: string[];
-  link?: string; // lien du repo (uniquement pour le projet)
-  screenshots?: Screenshot[]; // 0, 1 ou 2 images
+  link?: string;
+  screenshots?: Screenshot[];
 };
 
-// ✅ Ton profil GitHub (tu remplaces TON_USERNAME plus tard)
-const githubProfile = "https://github.com/TON_USERNAME";
+const githubProfile = "https://github.com/adameafd";
 
 const cards: Card[] = [
   {
@@ -42,11 +43,10 @@ const cards: Card[] = [
       "Organisation du code et logique métier",
     ],
     screenshots: [
-      { src: "/src/assets/projects/scrin1.png", alt: "Capture 1 - Projet stock" },
-      { src: "/src/assets/projects/scrin2.png", alt: "Capture 2 - Projet stock" },
+      { src: scrin1, alt: "Capture 1 - Projet stock" },
+      { src: scrin2, alt: "Capture 2 - Projet stock" },
     ],
-    // ✅ Mets ton repo ici plus tard si tu veux (sinon le bouton ouvrira ton profil)
-    // link: "https://github.com/TON_USERNAME/TON_REPO_STOCK",
+    link: "https://github.com/adameafd/gestiondesventes",
   },
   {
     title: "Stage d’observation — Service informatique (RADEEJ) — 07/2024",
@@ -85,13 +85,11 @@ const cards: Card[] = [
       "Décomposer un problème",
       "Collaboration et communication",
     ],
-    // Screenshot CTF plus tard si tu veux
   },
 ];
 
 function open(url?: string) {
-  if (!url) return;
-  window.open(url, "_blank", "noopener,noreferrer");
+  window.open(url || githubProfile, "_blank", "noopener,noreferrer");
 }
 </script>
 
@@ -140,11 +138,10 @@ function open(url?: string) {
           </ul>
         </div>
 
-        <!-- ✅ Screenshots -->
         <div v-if="c.screenshots?.length" class="screens">
           <img
             v-for="img in c.screenshots"
-            :key="img.src"
+            :key="img.alt"
             class="shot"
             :src="img.src"
             :alt="img.alt"
@@ -152,49 +149,23 @@ function open(url?: string) {
           />
         </div>
 
-        <!-- ✅ Actions : UNIQUEMENT pour le PROJET -->
         <div class="actions" v-if="c.type === 'Projet'">
-          <button v-if="c.link" class="btn primary" type="button" @click="open(c.link)">
+          <button class="btn primary" type="button" @click="open(c.link)">
             Voir le repo
           </button>
-
-          <button v-else class="btn primary" type="button" @click="open(githubProfile)">
-            GitHub
-          </button>
         </div>
-
-        <p class="hint" v-if="c.type === 'Projet'">
-        </p>
       </article>
     </div>
   </section>
 </template>
 
 <style scoped>
-/* Page */
-.wrap {
-  padding: 2rem 0;
-}
+.wrap { padding: 2rem 0; }
+.header { margin-bottom: 1.5rem; }
+.subtitle { max-width: 950px; line-height: 1.7; color: #4b5563; margin-top: 0.5rem; }
 
-.header {
-  margin-bottom: 1.5rem;
-}
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 
-.subtitle {
-  max-width: 950px;
-  line-height: 1.7;
-  color: #4b5563;
-  margin-top: 0.5rem;
-}
-
-/* Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-/* Card */
 .card {
   border: 1px solid #e5e7eb;
   border-radius: 18px;
@@ -206,13 +177,8 @@ function open(url?: string) {
   gap: 0.9rem;
 }
 
-.top {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
+.top { display: flex; flex-direction: column; gap: 0.6rem; }
 
-/* Tag */
 .tag {
   align-self: flex-start;
   border: 1px solid #e5e7eb;
@@ -224,18 +190,9 @@ function open(url?: string) {
   font-weight: 800;
 }
 
-.title {
-  margin: 0;
-  font-size: 1.08rem;
-  color: #111827;
-}
+.title { margin: 0; font-size: 1.08rem; color: #111827; }
 
-/* Chips */
-.chips {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
+.chips { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
 .chip {
   border: 1px solid #e5e7eb;
@@ -246,33 +203,13 @@ function open(url?: string) {
   color: #4b5563;
 }
 
-/* Blocks */
-.block .label {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #6b7280;
-  font-weight: 800;
-}
+.block .label { margin: 0; font-size: 0.9rem; color: #6b7280; font-weight: 800; }
 
-.text {
-  margin: 0.35rem 0 0;
-  line-height: 1.65;
-  color: #374151;
-}
+.text { margin: 0.35rem 0 0; line-height: 1.65; color: #374151; }
 
-.list {
-  margin: 0.35rem 0 0;
-  padding-left: 1.1rem;
-  line-height: 1.65;
-  color: #374151;
-}
+.list { margin: 0.35rem 0 0; padding-left: 1.1rem; line-height: 1.65; color: #374151; }
 
-/* Screenshots */
-.screens {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.7rem;
-}
+.screens { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; }
 
 .shot {
   width: 100%;
@@ -280,20 +217,12 @@ function open(url?: string) {
   border: 1px solid #e5e7eb;
   box-shadow: 0 8px 20px rgba(17, 24, 39, 0.06);
   transition: transform 0.15s ease;
-  cursor: pointer;
+  cursor: zoom-in;
 }
 
-.shot:hover {
-  transform: scale(1.02);
-}
+.shot:hover { transform: scale(1.02); }
 
-/* Actions */
-.actions {
-  display: flex;
-  gap: 0.7rem;
-  flex-wrap: wrap;
-  margin-top: 0.2rem;
-}
+.actions { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 0.2rem; }
 
 .btn {
   border: 1px solid #e5e7eb;
@@ -305,32 +234,10 @@ function open(url?: string) {
   font-weight: 800;
 }
 
-.btn:hover {
-  border-color: #16a34a;
-}
+.btn:hover { border-color: #16a34a; }
 
-.primary {
-  background: #16a34a;
-  border-color: #16a34a;
-  color: white;
-}
+.primary { background: #16a34a; border-color: #16a34a; color: white; }
 
-.hint {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #6b7280;
-}
-
-/* Responsive */
-@media (max-width: 1000px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 650px) {
-  .screens {
-    grid-template-columns: 1fr;
-  }
-}
+@media (max-width: 1000px) { .grid { grid-template-columns: 1fr; } }
+@media (max-width: 650px) { .screens { grid-template-columns: 1fr; } }
 </style>
