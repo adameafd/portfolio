@@ -21,8 +21,10 @@ const preview = ref<{ src: string; alt: string } | null>(null);
         <article v-for="(p, i) in projects" :key="p.title" class="card project reveal">
           <div class="top">
             <span class="index">0{{ i + 1 }}</span>
-            <span v-if="p.privateCode" class="badge"><Icon name="lock" /> Code privé</span>
-            <span v-else-if="p.demo" class="badge live">En ligne</span>
+            <span class="badges">
+              <span v-if="p.demo" class="badge live">En ligne</span>
+              <span v-if="p.privateCode" class="badge"><Icon name="lock" /> Code privé</span>
+            </span>
           </div>
 
           <h3 class="title">{{ p.title }}</h3>
@@ -57,7 +59,7 @@ const preview = ref<{ src: string; alt: string } | null>(null);
             <a v-if="p.repo" class="btn" :href="p.repo" target="_blank" rel="noreferrer">
               <Icon name="github" /> Code source
             </a>
-            <a v-if="p.privateCode" class="btn" :href="`mailto:${profile.email}?subject=${encodeURIComponent('Démo ' + p.title)}`">
+            <a v-if="p.privateCode && !p.demo" class="btn" :href="`mailto:${profile.email}?subject=${encodeURIComponent('Démo ' + p.title)}`">
               <Icon name="mail" /> Demander une démo
             </a>
           </div>
@@ -101,6 +103,11 @@ const preview = ref<{ src: string; alt: string } | null>(null);
   font-family: var(--mono);
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+.badges {
+  display: flex;
+  gap: 0.4rem;
 }
 
 .badge {

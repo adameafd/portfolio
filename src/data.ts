@@ -101,6 +101,7 @@ export const projects: Project[] = [
       "Export PDF, lien de partage, thème clair / sombre, FR / EN",
     ],
     stack: ["Next.js", "React", "Tailwind", "Express", "MySQL", "FastAPI", "scikit-learn", "Docker"],
+    demo: "https://datapilot-ecru.vercel.app",
     privateCode: true,
   },
   {
@@ -116,7 +117,6 @@ export const projects: Project[] = [
     ],
     stack: ["React 19", "Vite", "Node.js", "Express 5", "MySQL", "Socket.io", "Swagger"],
     repo: "https://github.com/adameafd/nova",
-    demo: "https://nova-flame-three.vercel.app",
   },
   {
     title: "Gestion des ventes & des stocks",
