@@ -2,9 +2,9 @@
 
 # 💼 Portfolio — Adame Afdari
 
-**Cybersécurité & Développement Backend**
+**Ingénierie logicielle · DevOps · Full Stack · Backend · Frontend**
 
-Portfolio personnel présentant mon parcours, mes compétences et mes projets, avec un objectif clair : décrocher un **stage en cybersécurité**.
+Portfolio personnel présentant mon parcours, mes compétences et mes projets, avec un objectif clair : décrocher un **stage de fin d'études de 6 mois à partir du 8 février 2027** en DevOps, Full Stack, Backend ou Frontend.
 
 [![Voir le site](https://img.shields.io/badge/Voir_le_site-en_ligne-2ea44f?style=for-the-badge&logo=githubpages&logoColor=white)](https://adameafd.github.io/portfolio/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Adame%20Afdari-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adame-afdari)
@@ -101,11 +101,11 @@ installation des dépendances → build → publication du dossier `dist/`.
 
 ## 👤 Auteur
 
-**Adame Afdari** — Étudiant en ingénierie informatique · Cybersécurité & Développement Backend
+**Adame Afdari** — Étudiant en ingénierie logicielle · DevOps · Full Stack · Backend · Frontend
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adame-afdari)
 [![GitHub](https://img.shields.io/badge/GitHub-adameafd-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/adameafd)
 
-*En recherche d'un stage en cybersécurité — n'hésitez pas à me contacter !*
+*En recherche d'un stage de fin d'études de 6 mois à partir du 8 février 2027 — n'hésitez pas à me contacter !*
 
 </div>
