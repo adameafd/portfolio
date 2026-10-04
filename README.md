@@ -21,20 +21,23 @@ Portfolio personnel présentant mon parcours, mes compétences et mes projets, a
 
 ## 🎯 À propos du projet
 
-Ce portfolio est une **application monopage (SPA)** développée avec **Vue 3**, **TypeScript** et **Vite**.
+Ce portfolio est un **site monopage** développé avec **Vue 3**, **TypeScript** et **Vite**, avec thème **clair / sombre** et design responsive.
 Il présente de façon claire et structurée qui je suis, ce que je sais faire et les projets que j'ai réalisés, en mettant l'accent sur la **sécurité applicative** et le **développement backend**.
 
 ## ✨ Fonctionnalités
 
-| Page | Contenu |
+| Section | Contenu |
 |---|---|
-| 🏠 **Accueil** | Présentation, domaines de prédilection et objectif professionnel |
-| 👤 **À propos** | Parcours, intérêt pour la cybersécurité et frise chronologique |
-| 🚀 **Projets** | Sélection de projets réalisés, avec captures d'écran |
-| 🧰 **Compétences** | Compétences organisées par domaine : Backend, Frontend, Cybersécurité, DevOps & outils |
-| 📫 **Contact** | Liens pour me contacter et consulter mes profils |
+| 🏠 **Accueil** | Présentation, disponibilité pour le stage et liens LinkedIn / GitHub |
+| 👤 **À propos** | Profil, approche et chiffres clés |
+| 🧰 **Compétences** | Frontend, Backend, DevOps & Cloud, Bases de données, Sécurité, Data & IA |
+| 🚀 **Projets** | AFD Security, DataPilot, NOVA, Gestion des ventes |
+| 🗺️ **Parcours** | Frise chronologique des projets et expériences |
+| 📫 **Contact** | Email, LinkedIn et GitHub |
 
-- Navigation fluide entre les pages grâce à **Vue Router**
+- Navigation fluide par ancres et en-tête fixe, menu mobile
+- Thème clair / sombre mémorisé, animations d'apparition au défilement
+- Contenu centralisé dans `src/data.ts` pour des mises à jour faciles
 - Code typé avec **TypeScript** et composants `<script setup>`
 - Interface responsive et épurée
 - **Déploiement continu** sur GitHub Pages via **GitHub Actions** à chaque push sur `main`
@@ -45,7 +48,6 @@ Il présente de façon claire et structurée qui je suis, ce que je sais faire e
 |---|---|
 | Framework | Vue 3 (Composition API, `<script setup>`) |
 | Langage | TypeScript |
-| Routage | Vue Router |
 | Build | Vite, vue-tsc |
 | Style | CSS |
 | CI/CD | GitHub Actions → GitHub Pages |
@@ -58,11 +60,10 @@ portfolio/
 ├── public/              # Fichiers statiques
 ├── src/
 │   ├── assets/          # Images et captures des projets
-│   ├── components/      # Composants réutilisables
-│   ├── pages/           # Home, About, Projects, Skills, Contact
-│   ├── styles/          # Styles globaux
-│   ├── App.vue          # Layout principal (en-tête & navigation)
-│   ├── router.ts        # Définition des routes
+│   ├── components/      # Sections du site (Hero, À propos, Compétences, Projets, Parcours, Contact)
+│   ├── styles/          # Styles globaux et thèmes clair / sombre
+│   ├── data.ts          # Tout le contenu du site (profil, compétences, projets, parcours)
+│   ├── App.vue          # Assemblage des sections
 │   └── main.ts          # Point d'entrée de l'application
 ├── index.html
 └── vite.config.ts
