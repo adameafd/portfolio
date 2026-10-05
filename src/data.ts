@@ -82,11 +82,12 @@ export const projects: Project[] = [
       "Application SaaS permettant d'auditer la sécurité d'un site web, de tester la robustesse des mots de passe, de détecter des fuites de données et de générer des rapports.",
     features: [
       "Offres Free, Pro et Expert avec espaces dédiés",
-      "Authentification JWT et gestion des rôles",
+      "Authentification JWT, rôles et double authentification (TOTP) du staff",
       "Espace d'administration et support",
-      "Génération de rapports d'audit",
+      "Rapports PDF / CSV / JSON, paiement Stripe (mode test), FR / EN",
     ],
-    stack: ["Node.js", "Express", "MySQL", "JWT", "JavaScript ES6"],
+    stack: ["Node.js", "Express", "MySQL", "JWT", "Stripe", "JavaScript ES6"],
+    demo: "https://afd-security.onrender.com",
     privateCode: true,
   },
   {
